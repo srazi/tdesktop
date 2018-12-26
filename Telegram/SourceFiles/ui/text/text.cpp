@@ -896,7 +896,7 @@ public:
 		_align = align;
 
 		_parDirection = _t->_startDir;
-		if (_parDirection == Qt::LayoutDirectionAuto) _parDirection = cLangDir();
+		if (_parDirection == Qt::LayoutDirectionAuto) _parDirection = Qt::LeftToRight; //cLangDir();
 		if ((*_t->_blocks.cbegin())->type() != TextBlockTNewline) {
 			initNextParagraph(_t->_blocks.cbegin());
 		}
@@ -936,7 +936,7 @@ public:
 				}
 
 				_parDirection = static_cast<NewlineBlock*>(b)->nextDirection();
-				if (_parDirection == Qt::LayoutDirectionAuto) _parDirection = cLangDir();
+				if (_parDirection == Qt::LayoutDirectionAuto) _parDirection = Qt::LeftToRight; //cLangDir();
 				initNextParagraph(i + 1);
 
 				longWordLine = true;
